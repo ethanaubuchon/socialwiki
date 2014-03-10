@@ -143,3 +143,8 @@ text-align:left;
 	width:20px;
 	
 }
+
+input#preview
+{
+	display:none;
+}

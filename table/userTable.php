@@ -78,6 +78,7 @@ class UserTable extends socialwiki_table {
 	*/
 	public static function make_followers_table($uid, $swid) {
 		$ids = socialwiki_get_follower_users($uid, $swid);
+		//var_dump($ids);
 		if (empty($ids)){
 			return null;
 			//return '<h3>'.get_String('youhavenofollowers', 'socialwiki').'</h3>';

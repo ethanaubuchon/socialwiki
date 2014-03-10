@@ -50,6 +50,7 @@ $newcontent = '';
 
 //This doesn't seem to get called ever?
 if (!empty($newcontent) && is_array($newcontent)) {
+    echo "i'm called edit.php 53";
     $newcontent = $newcontent['text'];
 }
 
@@ -110,7 +111,7 @@ if ($option == get_string('save', 'socialwiki')) {
     } else {
         if ($option == get_string('cancel')) {
             //delete lock
-            socialwiki_delete_locks($page->id, $USER->id, $section);
+            //socialwiki_delete_locks($page->id, $USER->id, $section);
 
             redirect($CFG->wwwroot . '/mod/socialwiki/view.php?pageid=' . $pageid);
         } else {
@@ -122,9 +123,9 @@ if ($option == get_string('save', 'socialwiki')) {
         }
     }
 
-    if (has_capability('mod/socialwiki:overridelock', $context)) {
+    /*if (has_capability('mod/socialwiki:overridelock', $context)) {
         $wikipage->set_overridelock(true);
-    }
+    }*/
 }
 
 

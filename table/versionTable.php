@@ -358,6 +358,20 @@ class versionTable extends socialwiki_table {
         }
     }
 
+    public static function makeContentFromFollowedTable($userid, $swid){
+        
+        
+        $pages = socialwiki_get_pages_from_followed($userid, $swid);
+
+        if ($pages) {
+            
+            $headers = versionTable::getHeaders('version');
+            
+            return new versionTable($userid, $swid,$pages, $headers);
+        }
+        return null;
+    }
+
     public static function makeNewPageVersionsTable($uid, $swid, $combiner=AVG){
     	$pages = socialwiki_get_updated_pages_by_subwiki($swid);
 
